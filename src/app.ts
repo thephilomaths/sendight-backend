@@ -1,4 +1,5 @@
 import express from 'express';
+
 import { createSlug } from './controllers/slugController';
 
 const app = express();
