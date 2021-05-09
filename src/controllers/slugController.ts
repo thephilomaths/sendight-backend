@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction, query } from 'express';
+import { Request, Response, NextFunction } from 'express';
 
 import db from '../db/models';
 import { modelFindOne } from '../utils/db_utils';
@@ -62,10 +62,7 @@ export const createSlug = async (
     }
     if (!noun) {
       noun = await modelFindOne(NounList, { where: { id: 1 }, attributes: ['word'] }, 'word');
-      await NounIndex.update(
-        { currentIndex: 1 },
-        { where: { currentIndex: [nounIndex] } },
-      );
+      await NounIndex.update({ currentIndex: 1 }, { where: { currentIndex: [nounIndex] } });
     }
 
     res.status(200).json({ message: 'Success', data: { slug: `${adjective}-${noun}` } });
