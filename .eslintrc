@@ -12,7 +12,7 @@
         "prettier"
     ],
     "rules": {
-        "no-console": 2,
+        "no-console": 1,
         "prettier/prettier": 2,
         "no-any": 0,
         "object-literal-sort-keys": 0
