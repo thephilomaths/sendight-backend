@@ -1,9 +1,12 @@
 import express from 'express';
+import cors from 'cors';
 
 import { createSlug } from './controllers/slugController';
 
 const app = express();
-const port = 3000;
+const port = 8000;
+
+app.use(cors());
 
 app.get('/', (_, res) => {
   res.send('The sedulous hyena ate the antelope!');
