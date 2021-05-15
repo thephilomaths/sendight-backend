@@ -13,10 +13,6 @@ app.use(cors());
 
 initSocket(server);
 
-app.get('/', (_, res) => {
-  res.send('The sedulous hyena ate the antelope!');
-});
-
 app.get('/slug', (req, res, next) => {
   createSlug(req, res, next).then();
 });
