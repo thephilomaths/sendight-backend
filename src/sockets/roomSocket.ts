@@ -14,7 +14,6 @@ export const roomSocket = (io: Server, socket: Socket): void => {
 
     // Getting updated room members
     clients = getClients(io, roomSlug);
-    console.log(clients);
     if (clients.length == MAX_ROOM_MEMBERS) {
       emitPeerJoinedEvent(io, clients);
     }
