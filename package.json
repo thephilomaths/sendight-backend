@@ -8,7 +8,8 @@
     "start": "tsc && node dist/app.js",
     "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
     "lint": "eslint . --ext .ts",
-    "lint-and-fix": "eslint . --ext .ts --fix"
+    "lint-and-fix": "eslint . --ext .ts --fix",
+    "build": "cd src/db && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all && mv db_dev.sqlite ../../ && cd ../.. && tsc"
   },
   "husky": {
     "hooks": {
